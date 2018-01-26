@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+.wrap {
+  bottom: 0;
+  left: 0;
+  padding-bottom: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  border:1px solid red;
+}
+.room-wrap {
+  display: flex;
+  height: 100%;
+}
+.video-view {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  z-index: 2;
+  /* margin-bottom: 80px; */
+  border: 1px solid blue;
+}
+.screen-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  align-items: center;
+  flex: 1;
+  flex-grow: 1;
+  justify-content: space-around;
+  width: 100%;
+  border:2px solid pink;
+}
+.video-box {
+  width: 574px;
+  height: 430px;
+  border: 1px solid green;
+}
+.video-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.meeting-ctrl {
+  justify-content: flex-end;
+  display: flex;
+  background-color: rgba(13,22,36,.5);
+  overflow: hidden;
+}
+.video-toolbar-item {
+  --button-text-color: #fff;
+  color: var(--button-text-color);
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 14px;
+  height: 80px;
+  justify-content: center;
+  padding: 0 8px;
+  text-align: center;
+  min-width: 72px;
+  border-radius: 0;
+  border:2px solid green;
+}
