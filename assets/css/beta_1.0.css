@@ -29,6 +29,8 @@
   z-index: 2;
   /* margin-bottom: 80px; */
   border: 1px solid blue;
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover;
 }
 .screen-container {
   display: -webkit-box;
@@ -53,26 +55,51 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .meeting-ctrl {
   justify-content: flex-end;
   display: flex;
   background-color: rgba(13,22,36,.5);
-  overflow: hidden;
+  /* overflow: hidden; */
+  border: 2px solid salmon;
 }
 .video-toolbar-item {
   --button-text-color: #fff;
   color: var(--button-text-color);
+  position: relative;
+  text-transform: uppercase;
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
   font-size: 14px;
   height: 80px;
   justify-content: center;
-  padding: 0 8px;
+  padding: 0 15px;
   text-align: center;
   min-width: 72px;
   border-radius: 0;
   border:2px solid green;
+  background: transparent;
+  cursor: pointer;
+}
+.video-toolbar-item img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 24px;
+}
+.video-toolbar-item img.rec-btn {
+  height: 54px;
+  position: absolute;
+  top: -26px;
+}
+.video-toolbar-item div {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;
+  min-width: 50px;
+  margin-top: 10px;
 }
