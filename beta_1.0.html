@@ -40,7 +40,7 @@
                   </div>
                 </div>
                 <div class="videoView-bottomLeftName">
-                  <p>Guest Name1</p>
+                  <input id="myName" value="Guest Name1" onclick="nameEdit()">
                 </div>
                 <div class="videoView-topToolbar">
                   <button>
@@ -76,10 +76,10 @@
                   <button class="video-toolbar-item"><img src="assets/images/icon/guest.png" alt=""><div>guest</div></button>
                   <button class="video-toolbar-item"><img src="assets/images/icon/video-on.png" alt=""><div>video on</div></button>
                   <button class="video-toolbar-item"><img src="assets/images/icon/mic-on.png" alt=""><div>mic on</div></button>
-                  <button class="video-toolbar-item"><img src="assets/images/icon/recording-off.png" alt="" class="rec-btn"><div>rec</div></button>
+                  <button class="video-toolbar-item"><img src="assets/images/icon/recording-off.png" alt="" class="rec-btn"><img src="assets/images/icon/recording-on.png" alt="" class="rec-btn-on"><div>rec</div></button>
                   <button class="video-toolbar-item"><img src="assets/images/icon/present.png" alt=""><div>present</div></button>
                   <button class="video-toolbar-item"><img src="assets/images/icon/settings.png" alt=""><div>settings</div></button>
-                  <button class="video-toolbar-item"><img src="assets/images/icon/leave.png" alt=""><div>leave</div></button>
+                  <button class="video-toolbar-item leave-button"><img src="assets/images/icon/leave.png" alt=""><div>leave</div></button>
                 </div>
               </div>
             </div>
@@ -100,7 +100,13 @@
 
 
         <script src="assets/js/signup.js"></script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+          function nameEdit() {
+            // document.getElementById("myName").readOnly = false;
+            document.getElementById("myName").select();
+            this.setSelectionRange(0, this.value.length);
+          }
+        </script>
     </body>
 </html>

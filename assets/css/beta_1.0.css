@@ -154,6 +154,9 @@ body {
   background: transparent;
   cursor: pointer;
 }
+.video-toolbar-item.leave-button {
+  background-color: rgba(199, 40, 68, .8);
+}
 .video-toolbar-item img {
   align-items: center;
   display: flex;
@@ -165,6 +168,12 @@ body {
   height: 54px;
   position: absolute;
   top: -26px;
+}
+.video-toolbar-item img.rec-btn-on {
+  position: absolute;
+  height: 54px;
+  top: -26px;
+  display: none;
 }
 .video-toolbar-item div {
   text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
@@ -229,12 +238,14 @@ body {
   max-width: 100%;
   display: flex;
 }
-.videoView-bottomLeftName p {
+.videoView-bottomLeftName p, .videoView-bottomLeftName input {
   margin: 0 6px;
   line-height: var(--size);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  background: transparent;
+  border: none;
   color: #fff;
   padding: 0;
   font-size: 16px;
