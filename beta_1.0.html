@@ -33,7 +33,7 @@
               </div>
             </div>
             <div class="screen-container">
-              <div class="video-box">
+              <div class="video-box" onload="videoHeight()">
                 <div style="height: 100%;">
                   <div class="video-frame" style="height: 100%;">
                     video
@@ -51,7 +51,7 @@
                   </button>
                 </div>
               </div>
-              <div class="video-box">
+              <div class="video-box" onload="videoHeight()">
                 <div style="height: 100%;">
                   <div class="video-frame" style="height: 100%;">
                     video
@@ -106,7 +106,12 @@
             // document.getElementById("myName").readOnly = false;
             document.getElementById("myName").select();
             this.setSelectionRange(0, this.value.length);
-          }
+          };
+          function videoHeight() {
+          var videoWidth = document.getELementsByClassName("video-box").offsetWidth;
+          var videoHeight = videoWidth * 3/4;
+          videoHeight = document.getELementsByClassName("video-box").offsetHeight;
+        };
         </script>
     </body>
 </html>
