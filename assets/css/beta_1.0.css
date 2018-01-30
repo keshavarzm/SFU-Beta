@@ -106,7 +106,7 @@ body {
 }
 .video-box {
   width: 48%;
-  height: 430px;
+  min-height: 430px;
   border: 1px solid #CCFF00;
   position: relative;
 }
