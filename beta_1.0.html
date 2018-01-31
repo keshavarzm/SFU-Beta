@@ -74,6 +74,44 @@
                   </button>
                 </div>
               </div>
+              <div class="video-box" onload="videoHeight()">
+                <div style="height: 100%;">
+                  <div class="video-frame" style="height: 100%;">
+                    video
+                  </div>
+                  <!-- This is where Video goes -->
+                </div>
+                <div class="videoView-bottomLeftName">
+                  <p>Guest Name2</p>
+                </div>
+                <div class="videoView-topToolbar">
+                  <button>
+                    <figure>
+                      <img src="assets/images/icon/maximize.png" alt="">
+                      <div>Exit fullscreen</div>
+                    </figure>
+                  </button>
+                </div>
+              </div>
+              <div class="video-box" onload="videoHeight()">
+                <div style="height: 100%;">
+                  <div class="video-frame" style="height: 100%;">
+                    video
+                  </div>
+                  <!-- This is where Video goes -->
+                </div>
+                <div class="videoView-bottomLeftName">
+                  <p>Guest Name2</p>
+                </div>
+                <div class="videoView-topToolbar">
+                  <button>
+                    <figure>
+                      <img src="assets/images/icon/maximize.png" alt="">
+                      <div>Exit fullscreen</div>
+                    </figure>
+                  </button>
+                </div>
+              </div>
             </div>
             <div class="video-toolbar-fixed">
               <div class="video-toolbar">
@@ -115,7 +153,30 @@
           for(var i=0, n=videoDom.length; i<n; i++){
             var videoWidth = videoDom[i].offsetWidth;
             var videoHeight = videoWidth * 3/4;
-            videoDom[i].style.height = videoHeight + "px";
+            if (videoDom.length < 3) {
+              var videoWidth = videoDom[i].offsetWidth;
+              var videoHeight = videoWidth * 3/4;
+              videoDom[i].style.height == videoHeight + "px";
+            } else if (videoDom.length === 3) {
+              videoDom[i].style.width = 31 + "%";
+              videoWidth;
+              videoHeight;
+              videoDom[i].style.height = videoHeight + "px";
+            } else if (videoDom.length === 4) {
+              videoWidth = 48 + "%";
+              videoHeight * 1/2;
+              videoWidth = videoHeight * 4/3;
+              videoDom[i].style.height = videoHeight + "px";
+              videoDom[i].style.width = videoWidth + "px";
+            } else {
+              videoWidth = 31 + "%";
+              videoHeight * 1/2;
+              videoWidth = videoHeight * 4/3;
+              videoDom[i].style.height = videoHeight + "px";
+              videoDom[i].style.width = videoWidth + "px";
+            };
+            // var manyVideo = (videoDom.length == 3) ? (true videoWidth == 31%; videoDom[i].style.width = videoWidth;) : ((videoDom.length == 4 ) ? (true videoHeight * 1/2; videoDom[i].style.height = videoHeight + "px";) : (else videoWidth == 31%;videoHeight * 1/2; videoDom[i].style.height = videoHeight + "px";));
+            // videoDom[i].style.height = videoHeight + "px";
             console.error('videoWidth = ' + videoWidth + "  Height = " + videoHeight);
           }
         };
