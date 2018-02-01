@@ -32,7 +32,7 @@
                 </div>
               </div>
             </div>
-            <div class="screen-container">
+            <div id ="screenContainer" class="screen-container">
               <div class="video-box"  onclick="videoHeight()">
                 <div style="height: 100%;">
                   <div class="video-frame" style="height: 100%;">
@@ -93,12 +93,11 @@
                   </button>
                 </div>
               </div>
-              <div class="video-box" onload="videoHeight()">
+               <div class="video-box" onload="videoHeight()">
                 <div style="height: 100%;">
                   <div class="video-frame" style="height: 100%;">
                     video
                   </div>
-                  <!-- This is where Video goes -->
                 </div>
                 <div class="videoView-bottomLeftName">
                   <p>Guest Name2</p>
@@ -112,12 +111,11 @@
                   </button>
                 </div>
               </div>
-              <div class="video-box" onload="videoHeight()">
+              <!--<div class="video-box" onload="videoHeight()">
                 <div style="height: 100%;">
                   <div class="video-frame" style="height: 100%;">
                     video
                   </div>
-                  <!-- This is where Video goes -->
                 </div>
                 <div class="videoView-bottomLeftName">
                   <p>Guest Name2</p>
@@ -130,9 +128,9 @@
                     </figure>
                   </button>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="video-toolbar-fixed">
+            <div id="videoToolbarFixed" class="video-toolbar-fixed">
               <div class="video-toolbar">
                 <div class="meeting-ctrl">
                   <button class="video-toolbar-item"><img src="assets/images/icon/guest.png" alt=""><div>guest</div></button>
@@ -172,53 +170,56 @@
           for(var i=0, n=videoDom.length; i<n; i++){
             var videoWidth = videoDom[i].offsetWidth;
             var videoHeight = videoWidth * 3/4;
-            // if (videoDom.length < 3) {
-            //   var videoWidth = videoDom[i].offsetWidth;
-            //   var videoHeight = videoWidth * 3/4;
-            //   videoDom[i].style.height == videoHeight + "px";
-            // } else if (videoDom.length === 3) {
-            //   videoDom[i].style.width = 31 + "%";
-            //   videoWidth;
-            //   videoHeight;
-            //   videoDom[i].style.height = videoHeight + "px";
-            // } else if (videoDom.length === 4) {
-            //   videoWidth = 48 + "%";
-            //   videoHeight * 1/2;
-            //   videoWidth = videoHeight * 4/3;
-            //   videoDom[i].style.height = videoHeight + "px";
-            //   videoDom[i].style.width = videoWidth + "px";
-            // } else {
-            //   videoWidth = 31 + "%";
-            //   videoHeight * 1/2;
-            //   videoWidth = videoHeight * 4/3;
-            //   videoDom[i].style.height = videoHeight + "px";
-            //   videoDom[i].style.width = videoWidth + "px";
-            // };
-
-            if (n === 3) {
-              videoWidth = 31 + "%";
-              videoHeight = (window.innerWidth * 0.36) + "%";
+            if (n < 3) {
+              var videoWidth = videoDom[i].offsetWidth;
+              var videoHeight = videoWidth * 3/4;
               videoDom[i].style.height == videoHeight + "px";
-              videoDom[i].style.width = videoWidth + "px";
-            } else if (n == 4) {
-              videoWidth = (window.innerWidth * 0.24);
-              videoHeight = (window.innerWidth * 0.18);
-              videoDom[i].style.height == videoHeight + "px";
-              videoDom[i].style.width = videoWidth + "px";
-            } else if (n >= 5) {
-              videoWidth = (window.innerWidth * 0.31);
-              videoHeight = 3/4 * videoWidth;
-              videoDom[i].style.height == videoHeight + "px";
-              videoDom[i].style.width = videoWidth + "px";
-              document.getElementsByClassName('screen-container').style("justify-content", "center");
-            } else {
+            } else if (n === 3) {
+              videoDom[i].style.width = 31 + "%";
               videoWidth;
               videoHeight;
               videoDom[i].style.height = videoHeight + "px";
-            }
+            } else if (n === 4) {
+              var screenContainer = document.getElementById("screenContainer");
+              screenContainer.style.width = 65 + "%";
+              videoHeight = 1/2 *  (document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight - 280);
+              videoWidth = 48 + "%";
+              videoWidth = videoHeight * 4/3;
+              videoDom[i].style.height = videoHeight + "px";
+              videoDom[i].style.width = videoWidth + "px";
+              console.error(document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight);
+            } else {
+              videoWidth = 31 + "%";
+              videoHeight * 1/2;
+              videoWidth = videoHeight * 4/3;
+              videoDom[i].style.height = videoHeight + "px";
+              videoDom[i].style.width = videoWidth + "px";
+            };
+
+            // if (n === 3) {
+            //   videoWidth = 31 + "%";
+            //   videoHeight = (window.innerWidth * 0.36) + "%";
+            //   videoDom[i].style.height == videoHeight + "px";
+            //   videoDom[i].style.width = videoWidth + "px";
+            // } else if (n == 4) {
+            //   videoWidth = (window.innerWidth * 0.24);
+            //   videoHeight = (window.innerWidth * 0.18);
+            //   videoDom[i].style.height == videoHeight + "px";
+            //   videoDom[i].style.width = videoWidth + "px";
+            // } else if (n >= 5) {
+            //   videoWidth = (window.innerWidth * 0.31);
+            //   videoHeight = 3/4 * videoWidth;
+            //   videoDom[i].style.height == videoHeight + "px";
+            //   videoDom[i].style.width = videoWidth + "px";
+            //   document.getElementsByClassName('screen-container').style("justify-content", "center");
+            // } else {
+            //   videoWidth;
+            //   videoHeight;
+            //   videoDom[i].style.height = videoHeight + "px";
+            // }
 
             // var manyVideo = (videoDom.length == 3) ? (true videoWidth == 31%; videoDom[i].style.width = videoWidth;) : ((videoDom.length == 4 ) ? (true videoHeight * 1/2; videoDom[i].style.height = videoHeight + "px";) : (else videoWidth == 31%;videoHeight * 1/2; videoDom[i].style.height = videoHeight + "px";));
-            // videoDom[i].style.height = videoHeight + "px";
+            videoDom[i].style.height = videoHeight + "px";
             console.error('videoWidth = ' + videoWidth + "  Height = " + videoHeight);
           }
         };
