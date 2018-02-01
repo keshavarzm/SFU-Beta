@@ -134,7 +134,7 @@
                 </div>
               </div>
               <!-- video box 5 -->
-              <div class="video-box" onload="videoHeight()">
+              <!--<div class="video-box" onload="videoHeight()">
                 <div style="height: 100%;">
                   <div class="video-frame" style="height: 100%;">
                     video
@@ -153,6 +153,7 @@
                 </div>
               </div>
               <!-- video box 6 -->
+
             </div>
             <div id="videoToolbarFixed" class="video-toolbar-fixed">
               <div class="video-toolbar">
@@ -191,38 +192,50 @@
           function videoHeight() {
           console.error("ttttttt");
           var videoDom = document.getElementsByClassName("video-box");
+          var videoWidth;
+          var videoHeight;
           for(var i=0, n=videoDom.length; i<n; i++){
-            var videoWidth = videoDom[i].offsetWidth;
-            var videoHeight = videoWidth * 3/4;
+            videoWidth = videoDom[i].offsetWidth;
+            videoHeight = videoWidth * 3/4;
+            console.error("i="+ i + " w=  " +videoWidth + " h=  " + videoHeight);
+
             if (n < 3) {
               videoWidth = videoDom[i].offsetWidth;
               videoHeight = videoWidth * 3/4;
               videoDom[i].style.height == videoHeight + "px";
+              console.error('n<3');
+
             } else if (n === 3) {
               videoDom[i].style.width = 31 + "%";
               videoWidth;
               videoHeight;
               videoDom[i].style.height = videoHeight + "px";
+              console.error('n=3');
+
             } else if (n === 4) {
               var screenContainer = document.getElementById("screenContainer");
               screenContainer.style.width = 65 + "%";
-              videoHeight = 1/2 *  (document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight - 280);
+              //videoHeight = 3/4 *  (document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight - 280);
+              videoHeight = 3/4 * videoWidth;
               videoWidth = 0.48 * screenContainer.offsetWidth + "px";
               videoDom[i].style.height = videoHeight + "px";
               videoDom[i].style.width = videoWidth + "px";
               screenContainer.style.height = document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight - 280 + "px";
-              console.error(document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight);
+              //console.error(document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight);
+              console.error('n=4');
+
             } else {
               var screenContainer = document.getElementById("screenContainer");
               screenContainer.style.width = 65 + "%";
               videoWidth = videoDom[i].style.width = 31 + "%";
-              videoWidth;
+              //videoWidth;
               videoHeight = 1/2 *  (document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight - 280);
-              videoHeight;
+              //videoHeight = 3/4 * videoWidth;
+              //videoHeight;
               videoDom[i].style.height = videoHeight + "px";
               videoDom[i].style.width = videoWidth + "px";
-               console.error(document.getElementById("screenContainer").offsetHeight);
-               console.error(document.getElementById("screenContainer").offsetWidth);
+               //console.error(document.getElementById("screenContainer").offsetHeight);
+               //console.error(document.getElementById("screenContainer").offsetWidth);
             };
 
             // if (n === 3) {
@@ -249,7 +262,7 @@
 
             // var manyVideo = (videoDom.length == 3) ? (true videoWidth == 31%; videoDom[i].style.width = videoWidth;) : ((videoDom.length == 4 ) ? (true videoHeight * 1/2; videoDom[i].style.height = videoHeight + "px";) : (else videoWidth == 31%;videoHeight * 1/2; videoDom[i].style.height = videoHeight + "px";));
             videoDom[i].style.height = videoHeight + "px";
-            console.error('videoWidth = ' + videoWidth + "  Height = " + videoHeight);
+            //console.error('videoWidth = ' + videoWidth + "  Height = " + videoHeight);
           }
         };
         </script>
