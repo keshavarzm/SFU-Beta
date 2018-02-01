@@ -183,10 +183,10 @@
               var screenContainer = document.getElementById("screenContainer");
               screenContainer.style.width = 65 + "%";
               videoHeight = 1/2 *  (document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight - 280);
-              videoWidth = 48 + "%";
-              videoWidth = videoHeight * 4/3;
+              videoWidth = 0.48 * screenContainer.offsetWidth + "px";
               videoDom[i].style.height = videoHeight + "px";
               videoDom[i].style.width = videoWidth + "px";
+              screenContainer.style.height = document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight - 280 + "px";
               console.error(document.getElementById("screenContainer").offsetHeight - document.getElementById("videoToolbarFixed").offsetHeight);
             } else {
               videoWidth = 31 + "%";
